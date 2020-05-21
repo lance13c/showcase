@@ -2,26 +2,28 @@
 
 @mixin main-size {
 	width: 100vw;
-	height: 70vh;
+	height: 100vh;
 }
 
 $section-background-color: #fefefe;
 
 #ppd-app {
-	.main-placeholder {
-		@include main-size;
-		z-index: -1;
-		position: relative;
-	}
+	// .main-placeholder {
+	// 	@include main-size;
+	// 	z-index: -1;
+	// 	position: relative;
+	// }
 
 	.main {
 		@include main-size;
-		position: fixed;
+		position: relative;
 		display: flex;
 		justify-content: flex-start;
 		top: 0;
-		z-index: -1;
+		z-index: 0;
 		background-image: url("/images/main_background.jpg");
+		background-color: rgb(201, 17, 201);
+		background-blend-mode: hard-light;
 		background-size: cover;
 		background-repeat: no-repeat;
 
@@ -45,9 +47,7 @@ $section-background-color: #fefefe;
 		font-size: .5rem;
 	}
 
-	$test-color: rbga($gray-100, 0.9);
-
 	.bg-linear-alpha-gray-100 {
-		background: linear-gradient(to bottom, $gray-100, $test-color);
+		background: linear-gradient(to top, $gray-100, $gray-100, $gray-100-transparent-80);
 	}
 }

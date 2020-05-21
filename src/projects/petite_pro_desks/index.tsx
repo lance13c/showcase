@@ -1,62 +1,166 @@
-import * as React from 'react';
+import React, { useState, useRef, CSSProperties } from 'react';
+import 'bulma/bulma.sass';
 import './styles/index.scss';
+
+import { ReCaptcha, Input, Textarea, Button } from 'react-rainbow-components';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faUser, faEnvelope } from '@fortawesome/free-solid-svg-icons';
+
+const inputStyles: CSSProperties = { width: '48%' };
+const inputIconStyles: CSSProperties = { color: '#01b6f5' };
+const titleStyles: CSSProperties = { textAlign: 'center' };
+
+const LIBRARY_RECAPTCHA_APIKEY = 'TESTING';
 
 export interface PetiteProDeskProps {}
 
-const PetiteProDesk: React.SFC<PetiteProDeskProps> = (props) => {
+const PetiteProDesk: React.SFC<PetiteProDeskProps> = () => {
+	const [ userName, setUserName ] = useState('');
+	const [ userNameError, setUserNameError ] = useState('');
+	const [ email, setEmail ] = useState('');
+	const [ emailError, setEmailError ] = useState('');
+	const [ message, setMessage ] = useState('');
+	const [ messageError, setMessageError ] = useState('');
+	const [ recaptcha, setRecaptcha ] = useState('');
+	const [ recaptchaError, setRecaptchaError ] = useState('');
+	const recaptchaRef = useRef<any>(null);
+
+	function handleUserNameChange(event: React.FormEvent<HTMLInputElement>) {
+		const userName = event.currentTarget.value;
+		let error = '';
+		if (userName === undefined || userName === '') {
+			error = 'the name is required';
+		}
+		setUserName(event.currentTarget.value);
+		setUserNameError(error);
+	}
+
+	function handleEmailChange(event: React.FormEvent<HTMLInputElement>) {
+		const email = event.currentTarget.value;
+		let error = '';
+		if (email === undefined || email === '') {
+			error = 'the email is required';
+		}
+
+		setEmail(event.currentTarget.value);
+		setEmailError(error);
+	}
+
+	function handleMessageChange(event: React.ChangeEvent<HTMLTextAreaElement>) {
+		const message = event.currentTarget.value;
+		let error = '';
+		if (message === undefined || message === '') {
+			error = 'the message is required';
+		}
+		setMessage(event.currentTarget.value);
+		setMessageError(error);
+	}
+
+	function handleReCaptchaSuccess(token: string) {
+		let error = '';
+		if (token === undefined) {
+			error = 'the recaptcha needs to be completed';
+		}
+
+		setRecaptcha(token);
+		setRecaptchaError(error);
+	}
+
+	function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
+		event.preventDefault();
+
+		let reload = false;
+		if (userName === undefined || userName === '') {
+			setUserNameError('the name is required');
+			reload = true;
+		}
+		if (email === undefined || email === '') {
+			setEmailError('the email is required');
+			reload = true;
+		}
+		if (message === undefined || message === '') {
+			setMessageError('the message is required');
+			reload = true;
+		}
+		if (recaptcha === undefined) {
+			setRecaptchaError('the recaptcha needs to be completed');
+			reload = true;
+		}
+		if (!reload) {
+			alert('Error');
+			if (recaptchaRef !== null) {
+				//@ts-ignore
+				recaptchaRef.current.reset();
+			}
+		}
+	}
+
 	return (
 		<section id="ppd-app">
 			<nav />
-			<div className="main-placeholder" />
 			<main className="main">
 				<div className="content-wrapper">
 					<h1 className="title is-1">Desks for Petite Professionals.</h1>
-					<h2 className="subtitle is-3 flex justify-start items-center flex-wrap">
+					{/* <h2 className="subtitle is-3 flex justify-start items-center flex-wrap">
 						<span>Small</span>
 						<i className="fas fa-circle is-size-8 p-5" />
 						<span>Ergonomic</span>
 						<i className="fas fa-circle is-size-8 p-5" />
 						<span>Hand Crafted</span>
-					</h2>
+					</h2> */}
+					<h2 className="subtitle is-3 pt-10">Stay Informed</h2>
+
+					<div>
+						{/* <GlobalHader src="images/user/user3.jpg" /> */}
+						<form onSubmit={handleSubmit} className="rainbow-p-around_xx-large">
+							<h1
+								className="rainbow-color_brand rainbow-font-size-heading_medium rainbow-p-bottom_large"
+								style={titleStyles}
+							>
+								Contact us
+							</h1>
+							<div className="rainbow-flex rainbow-justify_spread">
+								<Input
+									label="Name"
+									placeholder="Enter your name"
+									value={userName}
+									error={userNameError}
+									onChange={handleUserNameChange}
+									icon={<FontAwesomeIcon icon={faUser} style={inputIconStyles} />}
+									style={inputStyles}
+								/>
+								<Input
+									label="Email"
+									placeholder="enter your email"
+									value={email}
+									error={emailError}
+									onChange={handleEmailChange}
+									icon={<FontAwesomeIcon icon={faEnvelope} style={inputIconStyles} />}
+									style={inputStyles}
+								/>
+							</div>
+							<Textarea
+								label="Message"
+								placeholder="Enter a message"
+								value={message}
+								error={messageError}
+								onChange={handleMessageChange}
+								className="rainbow-m-vertical_large"
+							/>
+							<div className="rainbow-flex rainbow-align-content_space-between">
+								<ReCaptcha
+									siteKey={LIBRARY_RECAPTCHA_APIKEY}
+									// @ts-ignore
+									ref={recaptchaRef}
+									error={recaptchaError}
+									onChange={handleReCaptchaSuccess}
+								/>
+								<Button label="Send" variant="brand" type="submit" />
+							</div>
+						</form>
+					</div>
 				</div>
 			</main>
-			<section className="section bg-linear-alpha-gray-100">
-				<h1 className="title is-2">Attributes</h1>
-				<ul className="grid">
-					<li />
-					<li />
-					<li />
-					<li />
-					<li />
-					<li />
-				</ul>
-			</section>
-			<section className="section bg-purple-100">
-				<h1 className="title is-2">Our Mission</h1>
-				<p className="special-text">
-					Mission Statement Here adlkfjadlkfjalkdfjalkdfjlakdjflakdfjlakdjflakdjfl kdjfal dkfjal kdfjaldk
-					jfdalk jdflk jadlfkjadlkfj
-				</p>
-			</section>
-			<section className="section bg-pink-200">
-				<h1 className="title is-2">Stay Informed</h1>
-				<form action="">
-					<div className="row">
-						<input type="text" name="first-name" />
-						<input type="text" name="last-name" />
-					</div>
-					<ul className="checkbox-grid">
-						<li />
-						<li />
-						<li />
-						<li />
-						<li />
-						<li />
-						<li />
-						<li />
-					</ul>
-				</form>
-			</section>
 		</section>
 	);
 };
