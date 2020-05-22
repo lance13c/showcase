@@ -23,7 +23,7 @@
 	}
 
 	.logo-second {
-		$logo-second-color: rgb(224, 208, 204);
+		$logo-second-color: rgb(82, 137, 219);
 
 		// font-size: $logo-font-size;
 		fill: $logo-second-color;
@@ -57,11 +57,11 @@
 		font-family: "Spartan";
 		position: relative;
 		display: flex;
-		justify-content: center;
+		justify-content: flex-start;
 		top: 0;
 		z-index: 0;
 		background-position: center;
-		background-size: 80vw;
+		background-size: cover;
 		background-position-x: 500px;
 		background-position-y: 0px;
 		background-repeat: no-repeat;
@@ -74,14 +74,16 @@
 		background-blend-mode: soft-light;
 
 		.content-wrapper {
-			margin-left: 5vw;
-			margin-top: 20vh;
+			width: 50vw;
+			margin-left: 10vw;
+			margin-top: 30vh;
 			text-align: left;
 		}
 
 		.title {
 			font-size: 50px;
-			font-variation-settings: 'wght' 100;
+			line-height: 150%;
+			font-variation-settings: 'wght' 300;
 			color: white;
 		}
 
