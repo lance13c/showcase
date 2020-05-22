@@ -15,7 +15,7 @@
 	// }
 
 	.logo-first {
-		$logo-first-color: violet;
+		$logo-first-color: rgb(80, 149, 228);
 
 		// font-size: $logo-font-size;
 		fill: $logo-first-color;
@@ -23,7 +23,7 @@
 	}
 
 	.logo-second {
-		$logo-second-color: silver;
+		$logo-second-color: rgb(96, 202, 8);
 
 		// font-size: $logo-font-size;
 		fill: $logo-second-color;
@@ -41,20 +41,34 @@
 		}
 	}
 
+	// .main-background {
+	// 	position: absolute;
+	// 	background-image: url('/images/background.jpg');
+	// 	background-size: cover;
+	// 	background-repeat: no-repeat;
+	// 	top: 0;
+	// 	width: 100vw;
+	// 	height: 100vh;
+	// }
+
 	.main {
 		@include main-size;
 		font-family: "Spartan";
-		font-variation-settings: 'wght' 375, 'GRAD' 88;
 		position: relative;
 		display: flex;
 		justify-content: center;
 		top: 0;
 		z-index: 0;
-		// background-image: url("/images/main_background.jpg");
-		background: $background-gradient-2;
-		background-blend-mode: hard-light;
+		background-position: center;
+		background-blend-mode: color-burn;
 		background-size: cover;
 		background-repeat: no-repeat;
+		// background-position-y: -200px;
+		top: 0;
+		// width: 100vw;
+		height: 100vh;
+		// background-image: url("/images/main_background.jpg");
+		background-image: $background-gradient-1, url('/images/background.jpg');
 
 		.content-wrapper {
 			margin-left: 5vw;
@@ -63,7 +77,8 @@
 		}
 
 		.title {
-			font-size: 80px;
+			font-size: 60px;
+			font-variation-settings: 'wght' 300;
 			color: white;
 		}
 

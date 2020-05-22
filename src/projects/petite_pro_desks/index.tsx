@@ -102,6 +102,7 @@ function PetiteProDesk() {
 			<nav className="row nav">
 				<PageLogo />
 			</nav>
+			<div className="main-background" />
 			<main className="main">
 				<div className="content-wrapper">
 					<h1 className="title is-1">
