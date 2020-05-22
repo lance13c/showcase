@@ -5,7 +5,7 @@
 	height: 100vh;
 }
 
-$section-background-color: #fefefe;
+// $logo-font-size: initial;
 
 #ppd-app {
 	// .main-placeholder {
@@ -14,14 +14,30 @@ $section-background-color: #fefefe;
 	// 	position: relative;
 	// }
 
+	.logo-first {
+		$logo-first-color: violet;
+
+		// font-size: $logo-font-size;
+		fill: $logo-first-color;
+		color: $logo-first-color;
+	}
+
+	.logo-second {
+		$logo-second-color: silver;
+
+		// font-size: $logo-font-size;
+		fill: $logo-second-color;
+		color: $logo-second-color;
+	}
+
 	.nav {
 		position: absolute;
-		padding: 20px 20px;
+		padding: 20px 25px;
 		z-index: 1;
 
 		.page-logo {
-			top: 25px;
-			left: 25px;
+			// top: 25px;
+			// left: 40px;
 		}
 	}
 
@@ -44,6 +60,15 @@ $section-background-color: #fefefe;
 			margin-left: 5vw;
 			margin-top: 20vh;
 			text-align: left;
+		}
+
+		.title {
+			font-size: 80px;
+			color: white;
+		}
+
+		.subtitle {
+			color: rgb(224, 224, 224);
 		}
 	}
 

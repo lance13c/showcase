@@ -104,26 +104,24 @@ function PetiteProDesk() {
 			</nav>
 			<main className="main">
 				<div className="content-wrapper">
-					<h1 className="title is-1">Desks for Petite Professionals.</h1>
-					<h2 className="subtitle is-3 flex justify-left items-center flex-wrap">
+					<h1 className="title is-1">
+						Desks for <span className="logo-first">Pe</span>tite <span className="logo-second">Pr</span>ofessionals.
+					</h1>
+					{/* <h2 className="subtitle is-3 flex justify-left items-center flex-wrap">
 						<span>Small</span>
 						<i className="fas fa-circle is-size-8 p-5" />
 						<span>Ergonomic</span>
 						<i className="fas fa-circle is-size-8 p-5" />
 						<span>Hand Crafted</span>
-					</h2>{' '}
-					*/}
-					<h2 className="subtitle is-3 pt-10">Stay Informed</h2>
+					</h2>{' '} */}
+					{/* <h2 className="subtitle is-3 pt-10">Stay Informed</h2> */}
 					<div>
 						{/* <GlobalHader src="images/user/user3.jpg" /> */}
-						<form className="rainbow-p-around_xx-large">
-							onSubmit={handleSubmit}
+						<form className="rainbow-p-around_xx-large" onSubmit={handleSubmit}>
 							<h1
 								className="rainbow-color_brand rainbow-font-size-heading_medium rainbow-p-bottom_large"
 								style={titleStyles}
-							>
-								Contact us
-							</h1>
+							/>
 							{/* <div className="rainbow-flex rainbow-justify_spread">
 								<Input
 									label="Name"
