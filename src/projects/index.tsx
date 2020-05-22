@@ -8,7 +8,7 @@ const Projects: React.SFC<ProjectsProps> = () => {
 	return (
 		<Router>
 			<Switch>
-				<Route path="/petite-pro-desks" render={PetiteProDesk} />
+				<Route path="/petite-pro-desks" component={PetiteProDesk} />
 			</Switch>
 		</Router>
 	);

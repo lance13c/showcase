@@ -1,4 +1,4 @@
-import React, { useState, useRef, CSSProperties } from 'react';
+import * as React from 'react';
 import 'bulma/bulma.sass';
 import './styles/index.scss';
 
@@ -6,24 +6,24 @@ import { ReCaptcha, Input, Textarea, Button } from 'react-rainbow-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUser, faEnvelope } from '@fortawesome/free-solid-svg-icons';
 
-const inputStyles: CSSProperties = { width: '48%' };
-const inputIconStyles: CSSProperties = { color: '#01b6f5' };
-const titleStyles: CSSProperties = { textAlign: 'center' };
+const inputStyles: React.CSSProperties = { width: '48%' };
+const inputIconStyles: React.CSSProperties = { color: '#01b6f5' };
+const titleStyles: React.CSSProperties = { textAlign: 'center' };
 
 const LIBRARY_RECAPTCHA_APIKEY = 'TESTING';
 
 export interface PetiteProDeskProps {}
 
-const PetiteProDesk: React.SFC<PetiteProDeskProps> = () => {
-	const [ userName, setUserName ] = useState('');
-	const [ userNameError, setUserNameError ] = useState('');
-	const [ email, setEmail ] = useState('');
-	const [ emailError, setEmailError ] = useState('');
-	const [ message, setMessage ] = useState('');
-	const [ messageError, setMessageError ] = useState('');
-	const [ recaptcha, setRecaptcha ] = useState('');
-	const [ recaptchaError, setRecaptchaError ] = useState('');
-	const recaptchaRef = useRef<any>(null);
+function PetiteProDesk() {
+	const [ userName, setUserName ] = React.useState('');
+	const [ userNameError, setUserNameError ] = React.useState('');
+	const [ email, setEmail ] = React.useState('');
+	const [ emailError, setEmailError ] = React.useState('');
+	const [ message, setMessage ] = React.useState('');
+	const [ messageError, setMessageError ] = React.useState('');
+	const [ recaptcha, setRecaptcha ] = React.useState('');
+	const [ recaptchaError, setRecaptchaError ] = React.useState('');
+	const recaptchaRef = React.useRef<any>(null);
 
 	function handleUserNameChange(event: React.FormEvent<HTMLInputElement>) {
 		const userName = event.currentTarget.value;
@@ -112,7 +112,8 @@ const PetiteProDesk: React.SFC<PetiteProDeskProps> = () => {
 
 					<div>
 						{/* <GlobalHader src="images/user/user3.jpg" /> */}
-						<form onSubmit={handleSubmit} className="rainbow-p-around_xx-large">
+						<form className="rainbow-p-around_xx-large">
+							onSubmit={handleSubmit}
 							<h1
 								className="rainbow-color_brand rainbow-font-size-heading_medium rainbow-p-bottom_large"
 								style={titleStyles}
@@ -163,6 +164,6 @@ const PetiteProDesk: React.SFC<PetiteProDeskProps> = () => {
 			</main>
 		</section>
 	);
-};
+}
 
 export default PetiteProDesk;
