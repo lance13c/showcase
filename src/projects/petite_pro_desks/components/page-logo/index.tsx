@@ -1,10 +1,12 @@
 import * as React from 'react';
 
+import './index.scss';
+
 export interface PageLogoProps {}
 
 const PageLogo: React.SFC<PageLogoProps> = () => {
 	return (
-		<svg className="svg-page-logo" version="1.1" width="100" height="135" viewBox="557 159 214 214">
+		<svg className="svg-page-logo" version="1.1" width="230" height="230" viewBox="557 159 214 214">
 			<path
 				className="path-0-1"
 				vector-effect="non-scaling-stroke"

@@ -124,7 +124,7 @@ function PetiteProDesk() {
 							>
 								Contact us
 							</h1>
-							<div className="rainbow-flex rainbow-justify_spread">
+							{/* <div className="rainbow-flex rainbow-justify_spread">
 								<Input
 									label="Name"
 									placeholder="Enter your name"
@@ -161,7 +161,7 @@ function PetiteProDesk() {
 									onChange={handleReCaptchaSuccess}
 								/>
 								<Button label="Send" variant="brand" type="submit" />
-							</div>
+							</div> */}
 						</form>
 					</div>
 				</div>; */}

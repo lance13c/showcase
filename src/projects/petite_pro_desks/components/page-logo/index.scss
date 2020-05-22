@@ -1,7 +1,27 @@
 .svg-page-logo {
+	transform: scale(.5) translateX(-50%) translateY(-50%);
+	transition: all 0.2s;
+
+	&:hover,
+	&:focus {
+		cursor: pointer;
+		// transform: scale(.5) translateX(-50%) translateY(-65%);
+
+		.path-0-1 {
+			// fill: #ececec;
+			fill: gray;
+			// stroke: #1f104f;
+			stroke: gray;
+			stroke-width: 14;
+		}
+	}
+
 	.path-0-1 {
-		fill: #ececec;
-		stroke: #1f104f;
+		transition: all 0.2s;
+		// fill: #ececec;
+		fill: transparent;
+		// stroke: #1f104f;
+		stroke: transparent;
 		mix-blend-mode: source-over;
 		paint-order: stroke fill markers;
 		fill-opacity: 1;
@@ -11,7 +31,7 @@
 		stroke-linejoin: miter;
 		stroke-miterlimit: 4;
 		stroke-opacity: 1;
-		stroke-width: 14;
+		stroke-width: 1;
 	}
 
 	.g-1-1 {
@@ -31,10 +51,12 @@
 	}
 
 	.path-1-1 {
-		fill: #e38ff9;
+		// fill: #e38ff9;
+		fill: red;
 	}
 
 	.path-2-1 {
-		fill: #431b44;
+		// fill: #431b44;
+		fill: white;
 	}
 }
