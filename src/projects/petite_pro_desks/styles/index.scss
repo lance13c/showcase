@@ -17,6 +17,9 @@
 	}
 }
 
+$logo-first-color: rgb(224, 0, 0);
+$logo-second-color: rgb(91, 82, 219); //rgb(82, 137, 219);
+
 // $logo-font-size: initial;
 
 #ppd-app {
@@ -27,16 +30,12 @@
 	// }
 
 	.logo-first {
-		$logo-first-color: rgb(224, 0, 0);
-
 		// font-size: $logo-font-size;
 		fill: $logo-first-color;
 		color: $logo-first-color;
 	}
 
 	.logo-second {
-		$logo-second-color: rgb(91, 82, 219); //rgb(82, 137, 219);
-
 		// font-size: $logo-font-size;
 		fill: $logo-second-color;
 		color: $logo-second-color;
@@ -69,6 +68,7 @@
 		font-family: "Spartan";
 		position: relative;
 		display: flex;
+		flex-wrap: wrap;
 		justify-content: flex-start;
 		top: 0;
 		z-index: 0;
@@ -84,6 +84,13 @@
 		// background-image: url("/images/main_background.jpg");
 		background-image: $background-gradient-1, url('/images/background5.jpg');
 		background-blend-mode: soft-light;
+
+		.main-footer {
+			width: 100vw;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
 
 		.content-wrapper {
 			width: 50vw;
@@ -130,5 +137,17 @@
 
 	.bg-linear-alpha-gray-100 {
 		background: linear-gradient(to top, $gray-100, $gray-100, $gray-100-transparent-80);
+	}
+
+	.down-arrow {
+		transition: all 0.2s;
+		transform: translateY(0px) scale(1);
+		cursor: pointer;
+
+		&:hover,
+		&:focus {
+			color: $logo-first-color;
+			transform: translateY(5px) scale(1.1);
+		}
 	}
 }

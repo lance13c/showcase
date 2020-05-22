@@ -4,9 +4,10 @@ import './styles/index.scss';
 
 import { ReCaptcha, Input, Textarea, Button } from 'react-rainbow-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faUser, faEnvelope } from '@fortawesome/free-solid-svg-icons';
+import { faUser, faEnvelope, faAngleDown, faChevronDown, faCaretDown } from '@fortawesome/free-solid-svg-icons';
 
 import PageLogo from './components/page-logo';
+import DownArrow from './components/down-arrow';
 
 const inputStyles: React.CSSProperties = { width: '48%' };
 const inputIconStyles: React.CSSProperties = { color: '#01b6f5' };
@@ -163,6 +164,9 @@ function PetiteProDesk() {
 							</div> */}
 						</form>
 					</div>
+				</div>
+				<div className="main-footer">
+					<FontAwesomeIcon className="down-arrow" icon={faChevronDown} size="3x" color="#cccccc" />;
 				</div>
 			</main>
 		</section>
