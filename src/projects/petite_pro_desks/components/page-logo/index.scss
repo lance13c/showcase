@@ -9,15 +9,25 @@
 
 		.path-0-1 {
 			// fill: #ececec;
-			fill: gray;
+			// fill: rgb(197, 197, 207);
 			// stroke: #1f104f;
-			stroke: gray;
-			stroke-width: 14;
+			stroke: rgb(233, 233, 233);
+			stroke-width: 7;
+			// stroke-dashoffset: 100;
 		}
+
+		// .path-1-1 {
+		// 	stroke: 4;
+		// }
+
+		// .path-2-1 {
+		// 	stroke: 4;
+		// }
 	}
 
 	.path-0-1 {
 		transition: all 0.2s;
+		transition-timing-function: ease-in;
 		// fill: #ececec;
 		fill: transparent;
 		// stroke: #1f104f;
@@ -31,7 +41,7 @@
 		stroke-linejoin: miter;
 		stroke-miterlimit: 4;
 		stroke-opacity: 1;
-		stroke-width: 1;
+		stroke-width: 0;
 	}
 
 	.g-1-1 {
