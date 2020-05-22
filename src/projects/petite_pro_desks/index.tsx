@@ -163,7 +163,7 @@ function PetiteProDesk() {
 							</div> */}
 						</form>
 					</div>
-				</div>; */}
+				</div>
 			</main>
 		</section>
 	);

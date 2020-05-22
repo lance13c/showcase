@@ -15,7 +15,7 @@
 	// }
 
 	.logo-first {
-		$logo-first-color: rgb(80, 149, 228);
+		$logo-first-color: rgb(0, 74, 172);
 
 		// font-size: $logo-font-size;
 		fill: $logo-first-color;
@@ -23,7 +23,7 @@
 	}
 
 	.logo-second {
-		$logo-second-color: rgb(96, 202, 8);
+		$logo-second-color: rgb(110, 28, 3);
 
 		// font-size: $logo-font-size;
 		fill: $logo-second-color;
@@ -60,7 +60,7 @@
 		top: 0;
 		z-index: 0;
 		background-position: center;
-		background-blend-mode: color-burn;
+		background-blend-mode: soft-light;
 		background-size: cover;
 		background-repeat: no-repeat;
 		// background-position-y: -200px;
@@ -79,7 +79,7 @@
 		.title {
 			font-size: 60px;
 			font-variation-settings: 'wght' 300;
-			color: white;
+			color: black;
 		}
 
 		.subtitle {
