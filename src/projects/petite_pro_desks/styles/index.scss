@@ -15,7 +15,7 @@
 	// }
 
 	.logo-first {
-		$logo-first-color: rgb(0, 74, 172);
+		$logo-first-color: rgb(224, 0, 0);
 
 		// font-size: $logo-font-size;
 		fill: $logo-first-color;
@@ -23,7 +23,7 @@
 	}
 
 	.logo-second {
-		$logo-second-color: rgb(110, 28, 3);
+		$logo-second-color: rgb(224, 208, 204);
 
 		// font-size: $logo-font-size;
 		fill: $logo-second-color;
@@ -41,15 +41,16 @@
 		}
 	}
 
-	// .main-background {
-	// 	position: absolute;
-	// 	background-image: url('/images/background.jpg');
-	// 	background-size: cover;
-	// 	background-repeat: no-repeat;
-	// 	top: 0;
-	// 	width: 100vw;
-	// 	height: 100vh;
-	// }
+	.main-background {
+		position: absolute;
+		z-index: -1;
+		background: rgb(17, 17, 17);
+		background-size: cover;
+		background-repeat: no-repeat;
+		top: 0;
+		width: 100vw;
+		height: 100vh;
+	}
 
 	.main {
 		@include main-size;
@@ -60,15 +61,17 @@
 		top: 0;
 		z-index: 0;
 		background-position: center;
-		background-blend-mode: soft-light;
-		background-size: cover;
+		background-size: 80vw;
+		background-position-x: 500px;
+		background-position-y: 0px;
 		background-repeat: no-repeat;
 		// background-position-y: -200px;
 		top: 0;
 		// width: 100vw;
 		height: 100vh;
 		// background-image: url("/images/main_background.jpg");
-		background-image: $background-gradient-1, url('/images/background.jpg');
+		background-image: $background-gradient-1, url('/images/background5.jpg');
+		background-blend-mode: soft-light;
 
 		.content-wrapper {
 			margin-left: 5vw;
@@ -77,13 +80,13 @@
 		}
 
 		.title {
-			font-size: 60px;
-			font-variation-settings: 'wght' 300;
-			color: black;
+			font-size: 50px;
+			font-variation-settings: 'wght' 100;
+			color: white;
 		}
 
 		.subtitle {
-			color: rgb(224, 224, 224);
+			color: rgb(228, 228, 228);
 		}
 	}
 
