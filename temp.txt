@@ -1,0 +1,62 @@
+// {/* <div className="content-wrapper">
+// 	<h1 className="title is-1">Desks for Petite Professionals.</h1>
+// 	{/* <h2 className="subtitle is-3 flex justify-start items-center flex-wrap">
+// 						<span>Small</span>
+// 						<i className="fas fa-circle is-size-8 p-5" />
+// 						<span>Ergonomic</span>
+// 						<i className="fas fa-circle is-size-8 p-5" />
+// 						<span>Hand Crafted</span>
+// 					</h2> */}
+// 	<h2 className="subtitle is-3 pt-10">Stay Informed</h2>
+
+// 	<div>
+// 		{/* <GlobalHader src="images/user/user3.jpg" /> */}
+// 		<form className="rainbow-p-around_xx-large">
+// 			onSubmit={handleSubmit}
+// 			<h1
+// 				className="rainbow-color_brand rainbow-font-size-heading_medium rainbow-p-bottom_large"
+// 				style={titleStyles}
+// 			>
+// 				Contact us
+// 			</h1>
+// 			<div className="rainbow-flex rainbow-justify_spread">
+// 				<Input
+// 					label="Name"
+// 					placeholder="Enter your name"
+// 					value={userName}
+// 					error={userNameError}
+// 					onChange={handleUserNameChange}
+// 					icon={<FontAwesomeIcon icon={faUser} style={inputIconStyles} />}
+// 					style={inputStyles}
+// 				/>
+// 				<Input
+// 					label="Email"
+// 					placeholder="enter your email"
+// 					value={email}
+// 					error={emailError}
+// 					onChange={handleEmailChange}
+// 					icon={<FontAwesomeIcon icon={faEnvelope} style={inputIconStyles} />}
+// 					style={inputStyles}
+// 				/>
+// 			</div>
+// 			<Textarea
+// 				label="Message"
+// 				placeholder="Enter a message"
+// 				value={message}
+// 				error={messageError}
+// 				onChange={handleMessageChange}
+// 				className="rainbow-m-vertical_large"
+// 			/>
+// 			<div className="rainbow-flex rainbow-align-content_space-between">
+// 				<ReCaptcha
+// 					siteKey={LIBRARY_RECAPTCHA_APIKEY}
+// 					// @ts-ignore
+// 					ref={recaptchaRef}
+// 					error={recaptchaError}
+// 					onChange={handleReCaptchaSuccess}
+// 				/>
+// 				<Button label="Send" variant="brand" type="submit" />
+// 			</div>
+// 		</form>
+// 	</div>
+// </div>; */}

@@ -6,6 +6,8 @@ import { ReCaptcha, Input, Textarea, Button } from 'react-rainbow-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUser, faEnvelope } from '@fortawesome/free-solid-svg-icons';
 
+import PageLogo from './components/page-logo';
+
 const inputStyles: React.CSSProperties = { width: '48%' };
 const inputIconStyles: React.CSSProperties = { color: '#01b6f5' };
 const titleStyles: React.CSSProperties = { textAlign: 'center' };
@@ -97,19 +99,21 @@ function PetiteProDesk() {
 
 	return (
 		<section id="ppd-app">
-			<nav />
+			<nav className="row nav">
+				<PageLogo />
+			</nav>
 			<main className="main">
 				<div className="content-wrapper">
 					<h1 className="title is-1">Desks for Petite Professionals.</h1>
-					{/* <h2 className="subtitle is-3 flex justify-start items-center flex-wrap">
+					<h2 className="subtitle is-3 flex justify-left items-center flex-wrap">
 						<span>Small</span>
 						<i className="fas fa-circle is-size-8 p-5" />
 						<span>Ergonomic</span>
 						<i className="fas fa-circle is-size-8 p-5" />
 						<span>Hand Crafted</span>
-					</h2> */}
+					</h2>{' '}
+					*/}
 					<h2 className="subtitle is-3 pt-10">Stay Informed</h2>
-
 					<div>
 						{/* <GlobalHader src="images/user/user3.jpg" /> */}
 						<form className="rainbow-p-around_xx-large">
@@ -160,7 +164,7 @@ function PetiteProDesk() {
 							</div>
 						</form>
 					</div>
-				</div>
+				</div>; */}
 			</main>
 		</section>
 	);

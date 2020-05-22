@@ -1,3 +1,11 @@
+$background-gradient-1: linear-gradient(0deg, #434343, #000000);
+$background-gradient-2: linear-gradient(60deg, #29323c, #485563);
+
+@font-face {
+	font-family: 'Spartan';
+	src: url('/fonts/spartan/Spartan-VariableFont_wght.ttf');
+}
+
 $white: #fff;
 $gray-100: #f7fafc;
 $gray-100-transparent-80: #f7fafccc;
