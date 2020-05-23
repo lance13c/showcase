@@ -20,9 +20,22 @@
 $logo-first-color: rgb(224, 0, 0);
 $logo-second-color: rgb(91, 82, 219); //rgb(82, 137, 219);
 
+$main-fade-in-animation-time: 3s;
+
 // $logo-font-size: initial;
 
 #ppd-app {
+	@keyframes fade-in {
+		0% {
+			// background-image: background-main-gradient-before, url('/images/background5.jpg');
+			opacity: 0;
+		}
+
+		100% {
+			// background-image: $background-main-gradient-after, url('/images/background5.jpg');
+			opacity: 1;
+		}
+	}
 	// .main-placeholder {
 	// 	@include main-size;
 	// 	z-index: -1;
@@ -45,6 +58,12 @@ $logo-second-color: rgb(91, 82, 219); //rgb(82, 137, 219);
 		position: absolute;
 		padding: 20px 25px;
 		z-index: 1;
+		animation: fade-in 2s;
+		animation-delay: 3s;
+		opacity: 0;
+		$main-fade-in-animation-time: 2s;
+
+		animation-fill-mode: forwards;
 
 		.page-logo {
 			// top: 25px;
@@ -55,16 +74,17 @@ $logo-second-color: rgb(91, 82, 219); //rgb(82, 137, 219);
 	.main-background {
 		position: absolute;
 		z-index: -1;
-		background: rgb(17, 17, 17);
+		background: #0e0e0e;
 		background-size: cover;
 		background-repeat: no-repeat;
 		top: 0;
 		width: 100vw;
-		height: 100vh;
+		height: 120vh;
 	}
 
 	.main {
 		@include main-size;
+
 		font-family: "Spartan";
 		position: relative;
 		display: flex;
@@ -77,19 +97,25 @@ $logo-second-color: rgb(91, 82, 219); //rgb(82, 137, 219);
 		background-position-x: 500px;
 		background-position-y: 0px;
 		background-repeat: no-repeat;
+		background-image: $background-main-gradient, url('/images/background5.jpg');
+		animation: fade-in $main-fade-in-animation-time;
+		animation-timing-function: ease-in;
+		animation-fill-mode: forwards;
+		// clip-path: polygon(0 0, 0 100%, 100% 100%, 100% 0);
 		// background-position-y: -200px;
 		top: 0;
 		// width: 100vw;
-		height: 100vh;
+		height: 120vh;
 		// background-image: url("/images/main_background.jpg");
-		background-image: $background-gradient-1, url('/images/background5.jpg');
+		// background-image: $background-gradient-1, url('/images/background5.jpg');
 		background-blend-mode: soft-light;
 
 		.main-footer {
 			width: 100vw;
 			display: flex;
 			justify-content: center;
-			align-items: center;
+			align-items: flex-start;
+			background: $background-main-footer-gradient;
 		}
 
 		.content-wrapper {
@@ -104,7 +130,7 @@ $logo-second-color: rgb(91, 82, 219); //rgb(82, 137, 219);
 			line-height: 150%;
 			font-variation-settings: 'wght' 200;
 			color: white;
-			animation: text-fade-in 3s;
+			animation: text-fade-in $main-fade-in-animation-time;
 			animation-fill-mode: forwards;
 			// text-shadow: -1px 2px 1px #292929, -2px 4px 2px #292929, -3px 6px 3px rgba(#292929, 0.6),
 			// 	-4px 8px 4px rgba(#292929, 0.5), -5px 10px 5px rgba(#292929, 0.4), -6px 12px 6px rgba(#292929, 0.3),
@@ -120,6 +146,14 @@ $logo-second-color: rgb(91, 82, 219); //rgb(82, 137, 219);
 		.subtitle {
 			color: rgb(228, 228, 228);
 		}
+	}
+
+	#form-section {
+		background: $background-form-section;
+		// clip-path: polygon(-20% 0, -20% 100%, 100% 100%, 100% 0);
+
+		width: 100vw;
+		height: 100vh;
 	}
 
 	.section {

@@ -1,13 +1,18 @@
-$background-gradient-1: linear-gradient(60deg, #434343bb, #000000bb);
+$background-main-gradient-before: linear-gradient(60deg, #434343ff, #000000ff);
+$background-main-gradient: linear-gradient(60deg, #434343bb, #000000bb);
+
+$background-main-footer-gradient: linear-gradient(to bottom, #11111100, #111111bb, #070707);
+$background-form-section: linear-gradient(to bottom, #070707, #292929);
+
+$main-background-gradient: linear-gradient(60deg, #0a0a0a, #0d0d0f);
+
 $background-gradient-2: linear-gradient(60deg, #29323cbb, #485563bb);
 $background-gradient-3: linear-gradient(60deg, #ccd9e7bb, #2380e4bb);
 $background-gradient-4: linear-gradient(60deg, #a6cca2bb, #14ac21bb);
-
 @font-face {
 	font-family: 'Spartan';
 	src: url('/fonts/spartan/Spartan-VariableFont_wght.ttf');
 }
-
 $white: #fff;
 $gray-100: #f7fafc;
 $gray-100-transparent-80: #f7fafccc;
