@@ -18,7 +18,7 @@
 }
 
 $logo-first-color: rgb(224, 0, 0);
-$logo-second-color: rgb(13, 184, 175); // rgb(91, 82, 219); //rgb(82, 137, 219);
+$logo-second-color: #01b6f5; // rgb(91, 82, 219); //rgb(82, 137, 219);
 
 $main-fade-in-animation-time: 3s;
 
@@ -154,6 +154,12 @@ $main-fade-in-animation-time: 3s;
 
 		width: 100vw;
 		height: 100vh;
+		display: flex;
+		justify-content: center;
+	}
+
+	form {
+		width: 50vw;
 	}
 
 	.section {

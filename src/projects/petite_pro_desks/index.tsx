@@ -2,7 +2,7 @@ import * as React from 'react';
 import 'bulma/bulma.sass';
 import './styles/index.scss';
 
-import { ReCaptcha, Input, Textarea, Button } from 'react-rainbow-components';
+import { ReCaptcha, Input, Textarea, Button, Application } from 'react-rainbow-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUser, faEnvelope, faAngleDown, faChevronDown, faCaretDown } from '@fortawesome/free-solid-svg-icons';
 
@@ -14,6 +14,16 @@ const inputIconStyles: React.CSSProperties = { color: '#01b6f5' };
 const titleStyles: React.CSSProperties = { textAlign: 'center' };
 
 const LIBRARY_RECAPTCHA_APIKEY = 'TESTING';
+
+const themeDark = {
+	rainbow: {
+		palette: {
+			brand: '#44D7B6',
+			mainBackground: '#212121',
+			success: '#ffb900'
+		}
+	}
+};
 
 export interface PetiteProDeskProps {}
 
@@ -100,37 +110,38 @@ function PetiteProDesk() {
 
 	return (
 		<section id="ppd-app">
-			<nav className="row nav">
-				<PageLogo />
-			</nav>
-			<div className="main-background" />
-			<main className="main">
-				<div className="content-wrapper">
-					<h1 className="title is-1">
-						Desks for <span className="logo-first">Pe</span>tite <span className="logo-second">Pr</span>ofessionals.
-					</h1>
-					{/* <h2 className="subtitle is-3 flex justify-left items-center flex-wrap">
+			<Application theme={themeDark}>
+				<nav className="row nav">
+					<PageLogo />
+				</nav>
+				<div className="main-background" />
+				<main className="main">
+					<div className="content-wrapper">
+						<h1 className="title is-1">
+							Desks for <span className="logo-first">Pe</span>tite <span className="logo-second">Pr</span>ofessionals.
+						</h1>
+						{/* <h2 className="subtitle is-3 flex justify-left items-center flex-wrap">
 						<span>Small</span>
 						<i className="fas fa-circle is-size-8 p-5" />
 						<span>Ergonomic</span>
 						<i className="fas fa-circle is-size-8 p-5" />
 						<span>Hand Crafted</span>
 					</h2>{' '} */}
-					{/* <h2 className="subtitle is-3 pt-10">Stay Informed</h2> */}
-				</div>
-				<div className="main-footer">
-					<FontAwesomeIcon className="down-arrow" icon={faChevronDown} size="3x" color="#cccccc" />;
-				</div>
-			</main>
-			<section id="form-section" className="section">
-				<div>
-					{/* <GlobalHader src="images/user/user3.jpg" /> */}
-					<form className="rainbow-p-around_xx-large" onSubmit={handleSubmit}>
-						<h1
-							className="rainbow-color_brand rainbow-font-size-heading_medium rainbow-p-bottom_large"
-							style={titleStyles}
-						/>
-						{/* <div className="rainbow-flex rainbow-justify_spread">
+						{/* <h2 className="subtitle is-3 pt-10">Stay Informed</h2> */}
+					</div>
+					<div className="main-footer">
+						<FontAwesomeIcon className="down-arrow" icon={faChevronDown} size="3x" color="#cccccc" />;
+					</div>
+				</main>
+				<section id="form-section" className="section">
+					<div>
+						{/* <GlobalHader src="images/user/user3.jpg" /> */}
+						<form className="rainbow-p-around_xx-large" onSubmit={handleSubmit}>
+							<h1
+								className="rainbow-color_brand rainbow-font-size-heading_medium rainbow-p-bottom_large"
+								style={titleStyles}
+							/>
+							<div className="rainbow-flex rainbow-justify_spread">
 								<Input
 									label="Name"
 									placeholder="Enter your name"
@@ -161,16 +172,18 @@ function PetiteProDesk() {
 							<div className="rainbow-flex rainbow-align-content_space-between">
 								<ReCaptcha
 									siteKey={LIBRARY_RECAPTCHA_APIKEY}
+									theme="dark"
 									// @ts-ignore
 									ref={recaptchaRef}
 									error={recaptchaError}
 									onChange={handleReCaptchaSuccess}
 								/>
-								<Button label="Send" variant="brand" type="submit" />
-							</div> */}
-					</form>
-				</div>
-			</section>
+								<Button label="Send" variant="border-inverse" type="submit" />
+							</div>
+						</form>
+					</div>
+				</section>
+			</Application>
 		</section>
 	);
 }
