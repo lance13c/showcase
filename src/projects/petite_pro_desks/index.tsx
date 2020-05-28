@@ -2,13 +2,23 @@ import * as React from 'react';
 import 'bulma/bulma.sass';
 import './styles/index.scss';
 
-import { ReCaptcha, Input, Textarea, Button, Application } from 'react-rainbow-components';
+import {
+	ReCaptcha,
+	Input,
+	Textarea,
+	Button,
+	Application,
+	VisualPicker,
+	VisualPickerOption
+} from 'react-rainbow-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUser, faEnvelope, faAngleDown, faChevronDown, faCaretDown } from '@fortawesome/free-solid-svg-icons';
 
 import PageLogo from './components/page-logo';
 import DownArrow from './components/down-arrow';
 
+const optionsStyles: React.CSSProperties = { width: '100%', marginTop: '1.5rem' };
+const textAreaStyles: React.CSSProperties = { width: '100%' };
 const emailInputStyles: React.CSSProperties = { width: '100%' };
 const inputIconStyles: React.CSSProperties = { color: '#01b6f5' };
 const titleStyles: React.CSSProperties = { textAlign: 'center' };
@@ -37,6 +47,7 @@ function PetiteProDesk() {
 	const [ recaptcha, setRecaptcha ] = React.useState('');
 	const [ recaptchaError, setRecaptchaError ] = React.useState('');
 	const [ isLoading, setIsLoading ] = React.useState(false);
+	const [ options, setOptions ] = React.useState([]);
 	const recaptchaRef = React.useRef<any>(null);
 
 	function handleUserNameChange(event: React.FormEvent<HTMLInputElement>) {
@@ -80,6 +91,12 @@ function PetiteProDesk() {
 		setRecaptchaError(error);
 	}
 
+	function handleOptionsChange(value: string[]) {
+		console.info(value);
+		// @ts-ignore
+		return setOptions(value);
+	}
+
 	function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
 		event.preventDefault();
 
@@ -101,7 +118,6 @@ function PetiteProDesk() {
 			reload = true;
 		}
 		if (!reload) {
-			alert('Error');
 			if (recaptchaRef !== null) {
 				//@ts-ignore
 				recaptchaRef.current.reset();
@@ -153,14 +169,52 @@ function PetiteProDesk() {
 									style={emailInputStyles}
 								/>
 							</div>
-							<Textarea
-								label="Message"
-								placeholder="Anything else you wish to mention"
-								value={message}
-								error={messageError}
-								onChange={handleMessageChange}
-								className="rainbow-m-vertical_large"
-							/>
+
+							<VisualPicker
+								id="visual-picker-component-1"
+								label="Desired Features"
+								value={options}
+								//@ts-ignore
+								onChange={handleOptionsChange}
+								multiple
+								size="small"
+								style={optionsStyles}
+							>
+								<VisualPickerOption name="option-1">
+									<div className="option-label">Design</div>
+								</VisualPickerOption>
+								<VisualPickerOption name="option-2">
+									<div className="option-label">Photographer</div>
+								</VisualPickerOption>
+								<VisualPickerOption name="option-3">
+									<div className="option-label">Programmer</div>
+								</VisualPickerOption>
+								<VisualPickerOption name="option-4">
+									<div className="option-label">Programmer</div>
+								</VisualPickerOption>
+								<VisualPickerOption name="option-5">
+									<div className="option-label">Programmer</div>
+								</VisualPickerOption>
+								<VisualPickerOption name="option-6">
+									<div className="option-label">Programmer</div>
+								</VisualPickerOption>
+								<VisualPickerOption name="option-7">
+									<div className="option-label">Programmer</div>
+								</VisualPickerOption>
+								<VisualPickerOption name="option-8">
+									<div className="option-label">Programmer</div>
+								</VisualPickerOption>
+							</VisualPicker>
+							<div className="rainbow-flex">
+								<Textarea
+									label="Message"
+									placeholder="Anything else you wish to mention"
+									value={message}
+									onChange={handleMessageChange}
+									className="rainbow-m-vertical_large"
+									style={textAreaStyles}
+								/>
+							</div>
 							<div className="rainbow-flex rainbow-align-content_space-between">
 								<ReCaptcha
 									siteKey={LIBRARY_RECAPTCHA_APIKEY}

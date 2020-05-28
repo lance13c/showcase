@@ -185,4 +185,33 @@ $main-fade-in-animation-time: 3s;
 			transform: translateY(5px) scale(1.1);
 		}
 	}
+
+	.options-title {
+		font-size: 24px;
+		font-weight: 300;
+		color: $accent-1;
+	}
+
+	.option-label {
+		font-size: 15px;
+		font-weight: 300;
+		margin-top: 6px;
+		color: white;
+	}
+
+	.options-header {
+		font-size: 24px;
+		font-weight: 300;
+		color: $accent-1;
+	}
+
+	[data-id="visual-picker_option-container"] {
+		width: 120px;
+		height: 120px;
+	}
+
+	[data-id="visual-picker_option-label"] {
+		width: 120px;
+		height: 120px;
+	}
 }
