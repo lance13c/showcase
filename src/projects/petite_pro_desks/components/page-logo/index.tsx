@@ -9,7 +9,7 @@ const PageLogo: React.SFC<PageLogoProps> = () => {
 		<svg className="svg-page-logo" version="1.1" width="230" height="230" viewBox="557 159 214 214">
 			<path
 				className="path-0-1"
-				vector-effect="non-scaling-stroke"
+				vectorEffect="non-scaling-stroke"
 				transform="matrix(1,0,0,1,564,166)"
 				d="M100 0 C155.23 0 200 44.77 200 100 200 155.23 155.23 200 100 200 44.77 200 0 155.23 0 100 0 44.77 44.77 0 100 0 M100 2 L100 2 C45.88 2 2 45.88 2 100 2 154.12 45.88 198 100 198 154.12 198 198 154.12 198 100 198 45.88 154.12 2 100 2 z"
 			/>

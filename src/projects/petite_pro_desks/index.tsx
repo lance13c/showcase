@@ -9,7 +9,7 @@ import { faUser, faEnvelope, faAngleDown, faChevronDown, faCaretDown } from '@fo
 import PageLogo from './components/page-logo';
 import DownArrow from './components/down-arrow';
 
-const inputStyles: React.CSSProperties = { width: '48%' };
+const emailInputStyles: React.CSSProperties = { width: '100%' };
 const inputIconStyles: React.CSSProperties = { color: '#01b6f5' };
 const titleStyles: React.CSSProperties = { textAlign: 'center' };
 
@@ -18,7 +18,7 @@ const LIBRARY_RECAPTCHA_APIKEY = 'TESTING';
 const themeDark = {
 	rainbow: {
 		palette: {
-			brand: '#44D7B6',
+			brand: '#4492d7',
 			mainBackground: '#212121',
 			success: '#ffb900'
 		}
@@ -36,6 +36,7 @@ function PetiteProDesk() {
 	const [ messageError, setMessageError ] = React.useState('');
 	const [ recaptcha, setRecaptcha ] = React.useState('');
 	const [ recaptchaError, setRecaptchaError ] = React.useState('');
+	const [ isLoading, setIsLoading ] = React.useState(false);
 	const recaptchaRef = React.useRef<any>(null);
 
 	function handleUserNameChange(event: React.FormEvent<HTMLInputElement>) {
@@ -143,27 +144,18 @@ function PetiteProDesk() {
 							/>
 							<div className="rainbow-flex rainbow-justify_spread">
 								<Input
-									label="Name"
-									placeholder="Enter your name"
-									value={userName}
-									error={userNameError}
-									onChange={handleUserNameChange}
-									icon={<FontAwesomeIcon icon={faUser} style={inputIconStyles} />}
-									style={inputStyles}
-								/>
-								<Input
 									label="Email"
-									placeholder="enter your email"
+									placeholder="Enter an email"
 									value={email}
 									error={emailError}
 									onChange={handleEmailChange}
 									icon={<FontAwesomeIcon icon={faEnvelope} style={inputIconStyles} />}
-									style={inputStyles}
+									style={emailInputStyles}
 								/>
 							</div>
 							<Textarea
 								label="Message"
-								placeholder="Enter a message"
+								placeholder="Anything else you wish to mention"
 								value={message}
 								error={messageError}
 								onChange={handleMessageChange}
@@ -178,7 +170,7 @@ function PetiteProDesk() {
 									error={recaptchaError}
 									onChange={handleReCaptchaSuccess}
 								/>
-								<Button label="Send" variant="border-inverse" type="submit" />
+								<Button isLoading={isLoading} label="Send" variant="neutral" type="submit" />
 							</div>
 						</form>
 					</div>
