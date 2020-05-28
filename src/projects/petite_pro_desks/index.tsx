@@ -16,6 +16,7 @@ import { faUser, faEnvelope, faAngleDown, faChevronDown, faCaretDown } from '@fo
 
 import PageLogo from './components/page-logo';
 import DownArrow from './components/down-arrow';
+import CONFIGS from '../../config.json';
 
 const optionsStyles: React.CSSProperties = { width: '100%', marginTop: '1.5rem' };
 const textAreaStyles: React.CSSProperties = { width: '100%' };
@@ -23,7 +24,7 @@ const emailInputStyles: React.CSSProperties = { width: '100%' };
 const inputIconStyles: React.CSSProperties = { color: '#01b6f5' };
 const titleStyles: React.CSSProperties = { textAlign: 'center' };
 
-const LIBRARY_RECAPTCHA_APIKEY = 'TESTING';
+const LIBRARY_RECAPTCHA_APIKEY = CONFIGS.sitekey;
 
 const themeDark = {
 	rainbow: {
