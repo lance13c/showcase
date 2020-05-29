@@ -1,5 +1,7 @@
 @import '../../../styles/colors.scss';
 
+$background-image-offset: 500px;
+
 @mixin main-size {
 	width: 100vw;
 	height: 100vh;
@@ -77,6 +79,14 @@ $main-fade-in-animation-time: 3s;
 		height: 120vh;
 	}
 
+	.vertical-bar {
+		position: absolute;
+		background: $background-gradient-vertical-bar;
+		height: 100vh;
+		width: 100px;
+		left: $background-image-offset;
+	}
+
 	.main {
 		@include main-size;
 
@@ -89,7 +99,7 @@ $main-fade-in-animation-time: 3s;
 		z-index: 0;
 		background-position: center;
 		background-size: cover;
-		background-position-x: 500px;
+		background-position-x: $background-image-offset;
 		background-position-y: 0px;
 		background-repeat: no-repeat;
 		background-image: $background-main-gradient, url('/images/background5.jpg');

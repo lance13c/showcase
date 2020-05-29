@@ -93,7 +93,6 @@ function PetiteProDesk() {
 	}
 
 	function handleOptionsChange(value: string[]) {
-		console.info(value);
 		// @ts-ignore
 		return setOptions(value);
 	}
@@ -133,7 +132,9 @@ function PetiteProDesk() {
 					<PageLogo />
 				</nav>
 				<div className="main-background" />
+
 				<main className="main">
+					<div className="vertical-bar" />
 					<div className="content-wrapper">
 						<h1 className="title is-1">
 							Desks for <span className="logo-first">Pe</span>tite <span className="logo-second">Pr</span>ofessionals.

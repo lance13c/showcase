@@ -2,8 +2,11 @@
 $background-main-gradient-before: linear-gradient(60deg, #434343ff, #000000ff);
 $background-main-gradient: linear-gradient(60deg, #434343bb, #000000bb);
 
-$background-main-footer-gradient: linear-gradient(to bottom, #11111100, #111111bb, #070707);
+$background-main-footer-gradient: linear-gradient(to bottom, #0E0E0E00, #0E0E0Ebb, #070707);
 $background-form-section: linear-gradient(to bottom, #070707, #292929);
+
+// Vertical Bar Gradients
+$background-gradient-vertical-bar: linear-gradient(to right, #0e0e0e, #0e0e0e00);
 
 $main-background-gradient: linear-gradient(60deg, #0a0a0a, #0d0d0f);
 
