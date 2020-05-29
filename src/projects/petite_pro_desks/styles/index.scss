@@ -148,9 +148,21 @@ $main-fade-in-animation-time: 3s;
 		// clip-path: polygon(-20% 0, -20% 100%, 100% 100%, 100% 0);
 
 		width: 100vw;
-		height: 100vh;
+		height: 120vh;
 		display: flex;
 		justify-content: center;
+
+		.options-input-container {
+			label {
+				font-size: 1rem;
+			}
+		}
+
+		#options-visual-picker {
+			legend {
+				font-size: 1rem;
+			}
+		}
 	}
 
 	form {
@@ -200,8 +212,8 @@ $main-fade-in-animation-time: 3s;
 	}
 
 	.options-header {
-		font-size: 24px;
-		font-weight: 300;
+		font-family: "Spartan", sans-serif;
+		font-variation-settings: 'wght' 200;
 		color: $accent-1;
 	}
 

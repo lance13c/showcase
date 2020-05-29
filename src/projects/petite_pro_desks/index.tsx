@@ -61,21 +61,11 @@ function PetiteProDesk() {
 	const [ options, setOptions ] = React.useState([]);
 	const recaptchaRef = React.useRef<any>(null);
 
-	function handleUserNameChange(event: React.FormEvent<HTMLInputElement>) {
-		const userName = event.currentTarget.value;
-		let error = '';
-		if (userName === undefined || userName === '') {
-			error = 'the name is required';
-		}
-		setUserName(event.currentTarget.value);
-		setUserNameError(error);
-	}
-
 	function handleEmailChange(event: React.FormEvent<HTMLInputElement>) {
 		const email = event.currentTarget.value;
 		let error = '';
 		if (email === undefined || email === '') {
-			error = 'the email is required';
+			error = 'Email is required for submission';
 		}
 
 		setEmail(event.currentTarget.value);
@@ -117,7 +107,7 @@ function PetiteProDesk() {
 			reload = true;
 		}
 		if (email === undefined || email === '') {
-			setEmailError('the email is required');
+			setEmailError('Email is required for submission');
 			reload = true;
 		}
 		if (message === undefined || message === '') {
@@ -164,12 +154,10 @@ function PetiteProDesk() {
 				<section id="form-section" className="section">
 					<div>
 						{/* <GlobalHader src="images/user/user3.jpg" /> */}
+
 						<form className="rainbow-p-around_xx-large" onSubmit={handleSubmit}>
-							<h1
-								className="rainbow-color_brand rainbow-font-size-heading_medium rainbow-p-bottom_large"
-								style={titleStyles}
-							/>
-							<div className="rainbow-flex rainbow-justify_spread">
+							<h1 className="subtitle is-1 options-header">Stay In Touch</h1>
+							<div className="rainbow-flex rainbow-justify_spread options-input-container">
 								<Input
 									label="Email"
 									placeholder="Enter an email"
@@ -182,7 +170,7 @@ function PetiteProDesk() {
 							</div>
 
 							<VisualPicker
-								id="visual-picker-component-1"
+								id="options-visual-picker"
 								label="Desired Features"
 								value={options}
 								//@ts-ignore
@@ -191,7 +179,7 @@ function PetiteProDesk() {
 								size="small"
 								style={optionsStyles}
 							>
-								<VisualPickerOption name="option-1">
+								<VisualPickerOption name="manual-adjustable-height">
 									<FontAwesomeIcon
 										icon={faPersonCarry}
 										size="3x"
@@ -199,7 +187,7 @@ function PetiteProDesk() {
 									/>
 									<div className="option-label">Manual Adjustable Height</div>
 								</VisualPickerOption>
-								<VisualPickerOption name="option-5">
+								<VisualPickerOption name="auto-adjustable-height">
 									<FontAwesomeIcon
 										icon={faSortCircle}
 										size="3x"
@@ -207,16 +195,11 @@ function PetiteProDesk() {
 									/>
 									<div className="option-label">Auto Adjustable Height</div>
 								</VisualPickerOption>
-								<VisualPickerOption name="option-2">
+								<VisualPickerOption name="optional-desk-material">
 									<FontAwesomeIcon icon={faAcorn} size="3x" color={themeDark.rainbow.palette.brand} />
 									<div className="option-label">Optional Desk Material</div>
 								</VisualPickerOption>
-								<VisualPickerOption name="option-3">
-									{/* <FontAwesomeIcon
-										icon="/assets/"
-										size="3x"
-										color={themeDark.rainbow.palette.brand}
-									/> */}
+								<VisualPickerOption name="curved">
 									<img
 										width="30px"
 										style={{ color: 'white' }}
@@ -224,7 +207,7 @@ function PetiteProDesk() {
 									/>
 									<div className="option-label">Curved</div>
 								</VisualPickerOption>
-								<VisualPickerOption name="option-4">
+								<VisualPickerOption name="keyboard-tray">
 									<FontAwesomeIcon
 										icon={faKeyboard}
 										size="3x"
@@ -232,7 +215,7 @@ function PetiteProDesk() {
 									/>
 									<div className="option-label">Keyboard Tray</div>
 								</VisualPickerOption>
-								<VisualPickerOption name="option-6">
+								<VisualPickerOption name="drawers">
 									<FontAwesomeIcon
 										icon={faCabinetFiling}
 										size="3x"
@@ -240,7 +223,7 @@ function PetiteProDesk() {
 									/>
 									<div className="option-label">Drawers</div>
 								</VisualPickerOption>
-								<VisualPickerOption name="option-7">
+								<VisualPickerOption name="cable-management">
 									<FontAwesomeIcon
 										icon={faTreasureChest}
 										size="3x"
@@ -248,7 +231,7 @@ function PetiteProDesk() {
 									/>
 									<div className="option-label">Cable Management</div>
 								</VisualPickerOption>
-								<VisualPickerOption name="option-8">
+								<VisualPickerOption name="power-outlets">
 									<FontAwesomeIcon
 										icon={faOutlet}
 										size="3x"
@@ -257,7 +240,7 @@ function PetiteProDesk() {
 									<div className="option-label">Power Outlets</div>
 								</VisualPickerOption>
 							</VisualPicker>
-							<div className="rainbow-flex">
+							<div className="rainbow-flex options-input-container">
 								<Textarea
 									label="Message"
 									placeholder="Anything else you wish to mention"
@@ -267,7 +250,7 @@ function PetiteProDesk() {
 									style={textAreaStyles}
 								/>
 							</div>
-							<div className="rainbow-flex rainbow-align-content_space-between">
+							<div className="rainbow-flex rainbow-align-content_space-between options-input-container">
 								<ReCaptcha
 									siteKey={LIBRARY_RECAPTCHA_APIKEY}
 									theme="dark"
