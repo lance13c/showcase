@@ -12,7 +12,9 @@ import {
 	VisualPickerOption
 } from 'react-rainbow-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faUser, faEnvelope, faAngleDown, faChevronDown, faCaretDown } from '@fortawesome/free-solid-svg-icons';
+import { faUser, faEnvelope, faAngleDown, faChevronDown, faCaretDown } from '@fortawesome/pro-solid-svg-icons';
+import { faCabinetFiling, faSortCircle, faKeyboard, faPersonCarry, faAcorn } from '@fortawesome/pro-light-svg-icons';
+// import {} from '@fortawesome/pro-duotone-svg-icons';
 
 import PageLogo from './components/page-logo';
 import DownArrow from './components/down-arrow';
@@ -182,27 +184,68 @@ function PetiteProDesk() {
 								style={optionsStyles}
 							>
 								<VisualPickerOption name="option-1">
-									<div className="option-label">Design</div>
-								</VisualPickerOption>
-								<VisualPickerOption name="option-2">
-									<div className="option-label">Photographer</div>
-								</VisualPickerOption>
-								<VisualPickerOption name="option-3">
-									<div className="option-label">Programmer</div>
-								</VisualPickerOption>
-								<VisualPickerOption name="option-4">
-									<div className="option-label">Programmer</div>
+									<FontAwesomeIcon
+										icon={faPersonCarry}
+										size="3x"
+										color={themeDark.rainbow.palette.brand}
+									/>
+									<div className="option-label">Manual Adjustable Height</div>
 								</VisualPickerOption>
 								<VisualPickerOption name="option-5">
-									<div className="option-label">Programmer</div>
+									<FontAwesomeIcon
+										icon={faSortCircle}
+										size="3x"
+										color={themeDark.rainbow.palette.brand}
+									/>
+									<div className="option-label">Auto Adjustable Height</div>
+								</VisualPickerOption>
+								<VisualPickerOption name="option-2">
+									<FontAwesomeIcon icon={faAcorn} size="3x" color={themeDark.rainbow.palette.brand} />
+									<div className="option-label">Optional Desk Material</div>
+								</VisualPickerOption>
+								<VisualPickerOption name="option-3">
+									{/* <FontAwesomeIcon
+										icon="/assets/"
+										size="3x"
+										color={themeDark.rainbow.palette.brand}
+									/> */}
+									<img
+										width="30px"
+										style={{ color: 'white' }}
+										src="/images/rectangle-insert-2.webp"
+									/>
+									<div className="option-label">Curved Inlet</div>
+								</VisualPickerOption>
+								<VisualPickerOption name="option-4">
+									<FontAwesomeIcon
+										icon={faKeyboard}
+										size="3x"
+										color={themeDark.rainbow.palette.brand}
+									/>
+									<div className="option-label">Keyboard Tray</div>
 								</VisualPickerOption>
 								<VisualPickerOption name="option-6">
-									<div className="option-label">Programmer</div>
+									<FontAwesomeIcon
+										icon={faCabinetFiling}
+										size="3x"
+										color={themeDark.rainbow.palette.brand}
+									/>
+									<div className="option-label">Drawers</div>
 								</VisualPickerOption>
 								<VisualPickerOption name="option-7">
+									<FontAwesomeIcon
+										icon={faCabinetFiling}
+										size="3x"
+										color={themeDark.rainbow.palette.brand}
+									/>
 									<div className="option-label">Programmer</div>
 								</VisualPickerOption>
 								<VisualPickerOption name="option-8">
+									<FontAwesomeIcon
+										icon={faCabinetFiling}
+										size="3x"
+										color={themeDark.rainbow.palette.brand}
+									/>
 									<div className="option-label">Programmer</div>
 								</VisualPickerOption>
 							</VisualPicker>
