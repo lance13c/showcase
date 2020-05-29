@@ -13,7 +13,15 @@ import {
 } from 'react-rainbow-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUser, faEnvelope, faAngleDown, faChevronDown, faCaretDown } from '@fortawesome/pro-solid-svg-icons';
-import { faCabinetFiling, faSortCircle, faKeyboard, faPersonCarry, faAcorn } from '@fortawesome/pro-light-svg-icons';
+import {
+	faCabinetFiling,
+	faSortCircle,
+	faKeyboard,
+	faPersonCarry,
+	faAcorn,
+	faTreasureChest,
+	faOutlet
+} from '@fortawesome/pro-light-svg-icons';
 // import {} from '@fortawesome/pro-duotone-svg-icons';
 
 import PageLogo from './components/page-logo';
@@ -214,7 +222,7 @@ function PetiteProDesk() {
 										style={{ color: 'white' }}
 										src="/images/rectangle-insert-2.webp"
 									/>
-									<div className="option-label">Curved Inlet</div>
+									<div className="option-label">Curved</div>
 								</VisualPickerOption>
 								<VisualPickerOption name="option-4">
 									<FontAwesomeIcon
@@ -234,19 +242,19 @@ function PetiteProDesk() {
 								</VisualPickerOption>
 								<VisualPickerOption name="option-7">
 									<FontAwesomeIcon
-										icon={faCabinetFiling}
+										icon={faTreasureChest}
 										size="3x"
 										color={themeDark.rainbow.palette.brand}
 									/>
-									<div className="option-label">Programmer</div>
+									<div className="option-label">Cable Management</div>
 								</VisualPickerOption>
 								<VisualPickerOption name="option-8">
 									<FontAwesomeIcon
-										icon={faCabinetFiling}
+										icon={faOutlet}
 										size="3x"
 										color={themeDark.rainbow.palette.brand}
 									/>
-									<div className="option-label">Programmer</div>
+									<div className="option-label">Power Outlets</div>
 								</VisualPickerOption>
 							</VisualPicker>
 							<div className="rainbow-flex">
